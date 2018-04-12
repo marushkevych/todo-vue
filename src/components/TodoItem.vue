@@ -9,6 +9,7 @@
     </div>
     <!-- One-directional data flow: -->
     <input class="edit" 
+           v-focus="editing"
            :value="todo.text"
            @keyup.enter="update"
            @blur="update"
@@ -36,6 +37,16 @@ export default {
     update: function(event) {
       this.editing = false
       this.$emit('update', event.target.value)
+    }
+  },
+  directives: {
+    focus: {
+      // directive definition
+      componentUpdated: function (el, binding) {
+        if (binding.value) {
+          el.focus()
+        }
+      }
     }
   }
 }
