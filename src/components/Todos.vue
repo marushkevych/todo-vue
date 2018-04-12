@@ -22,7 +22,8 @@
           :key="todo.id"
           :todo="todo" 
           @toggle="toggle($event, todo)"
-          @remove="remove(todo)">
+          @remove="remove(todo)"
+          @update="update($event, todo)">
         </todo-item>
       </ul>
     </section>
@@ -106,6 +107,9 @@ export default {
     },
     clearCompleted: function() {
       this.todos.filter(t => t.done).forEach(this.remove)
+    },
+    update: function(newText, todo) {
+      todo.text = newText
     }
   }
 }
