@@ -43,7 +43,7 @@
         </li>
       </ul>
       <!-- Hidden if no completed items are left ↓ -->
-      <button class="clear-completed">Clear completed</button>
+      <button class="clear-completed" @click="clearCompleted">Clear completed</button>
     </footer>
   </section>
 
@@ -103,6 +103,9 @@ export default {
     },
     remove: function(todo) {
       this.todos.splice(this.todos.indexOf(todo), 1);
+    },
+    clearCompleted: function() {
+      this.todos.filter(t => t.done).forEach(this.remove)
     }
   }
 }
