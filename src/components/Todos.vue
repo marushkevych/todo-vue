@@ -27,7 +27,7 @@
       </ul>
     </section>
     <!-- This footer should hidden by default and shown when there are todos -->
-    <footer class="footer">
+    <footer v-if="todos.length" class="footer">
       <!-- This should be `0 items left` by default -->
       <span class="todo-count"><strong>{{itemsLeft}}</strong> {{itemsLeftLabel}}</span>
       <!-- Remove this if you don't implement routing -->
