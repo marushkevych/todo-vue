@@ -2,7 +2,12 @@
   <section class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <input class="new-todo" placeholder="What needs to be done?" autofocus>
+      <input type="text" 
+             class="new-todo" 
+             placeholder="What needs to be done?" 
+             autofocus 
+             v-model="newTodoText"
+             @keyup.enter="add">
     </header>
     <!-- This section should be hidden by default and shown when there are todos -->
     <section class="main">
