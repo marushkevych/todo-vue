@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import TodoItem from '@/components/TodoItem'
+import TodoItem from '@/components/TodoItemOld'
 
 export default {
   name: 'todos-old',
