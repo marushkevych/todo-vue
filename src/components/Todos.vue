@@ -11,7 +11,11 @@
     </header>
     <!-- This section should be hidden by default and shown when there are todos -->
     <section class="main">
-      <input id="toggle-all" class="toggle-all" type="checkbox">
+      <input id="toggle-all" 
+             class="toggle-all" 
+             type="checkbox" 
+             @click="toggleAll" 
+             :checked="allDone">
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
         <todo-item v-for="todo in todos"
