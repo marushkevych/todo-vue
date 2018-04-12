@@ -5,7 +5,7 @@
     <div class="view">
       <input :id="todo.id" class="toggle" type="checkbox" :checked="todo.done" @click="toggle">
       <label>{{ todo.text }}</label>
-      <button class="destroy"></button>
+      <button class="destroy" @click="remove"></button>
     </div>
     <input class="edit" :value="todo.text">
   </li>
@@ -19,6 +19,9 @@ export default {
     // One-directional data flow:
     toggle: function() {
       this.$emit('toggle', !this.todo.done)
+    },
+    remove: function() {
+      this.$emit('remove')
     }
   }
 }

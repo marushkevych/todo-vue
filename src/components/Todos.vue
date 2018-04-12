@@ -21,7 +21,8 @@
         <todo-item v-for="todo in todos"
           :key="todo.id"
           :todo="todo" 
-          @toggle="toggle($event, todo)">
+          @toggle="toggle($event, todo)"
+          @remove="remove(todo)">
         </todo-item>
       </ul>
     </section>
@@ -99,6 +100,9 @@ export default {
     toggleAll: function() {
       const checked = !this.allDone
       this.todos.forEach(el => el.done = checked)
+    },
+    remove: function(todo) {
+      this.todos.splice(this.todos.indexOf(todo), 1);
     }
   }
 }
