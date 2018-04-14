@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import nanoid from 'nanoid'
 import TodoItem from '@/components/TodoItem'
 import TodoFooter from '@/components/TodoFooter'
 
@@ -45,10 +46,7 @@ export default {
   data: function() {
     return {
       newTodoText: '',
-      todos: [
-        {id: '0', text: 'foo', done: false},
-        {id: '1', text: 'bar', done: true}
-      ]
+      todos: []
     }
   },
   computed: {
@@ -70,7 +68,7 @@ export default {
     add: function() {
       if(this.newTodoText) {
         this.todos.push({
-          id: this.todos.length,
+          id: nanoid(),
           text: this.newTodoText, 
           done: false
         })

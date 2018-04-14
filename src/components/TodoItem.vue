@@ -1,6 +1,6 @@
 <template>
-  <!-- These are here just to show the structure of the list items -->
-  <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+  <!-- List items should get the class `editing` when editing and `completed` 
+  when marked as completed -->
   <li :class="{completed: todo.done, editing: editing}">
     <div class="view">
       <input :id="todo.id" class="toggle" type="checkbox" :checked="todo.done" @click="toggle">
