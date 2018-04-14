@@ -34,13 +34,13 @@
       <!-- Remove this if you don't implement routing -->
       <ul class="filters">
         <li>
-          <a :class="{selected: this.$route.params.filter === undefined}" href="#/">All</a>
+          <router-link to="/">All</router-link>
         </li>
         <li>
-          <a :class="{selected: this.$route.params.filter === 'active'}" href="#/active">Active</a>
+          <router-link to="/active">Active</router-link>
         </li>
         <li>
-          <a :class="{selected: this.$route.params.filter === 'completed'}" href="#/completed">Completed</a>
+          <router-link to="/completed">Completed</router-link>
         </li>
       </ul>
       <!-- Hidden if no completed items are left ↓ -->

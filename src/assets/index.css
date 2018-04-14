@@ -311,7 +311,7 @@ body {
 	border-color: rgba(175, 47, 47, 0.1);
 }
 
-.filters li a.selected {
+.filters li a.router-link-exact-active {
 	border-color: rgba(175, 47, 47, 0.2);
 }
 
