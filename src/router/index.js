@@ -8,20 +8,9 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'todos',
-      component: Todos
-    },
-    {
-      path: '/old',
-      name: 'old',
-      component: TodosOld
-    },
-    {
-      path: '/links',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+    // filter param is optional
+    {path: '/:filter?', component: Todos},
+    {path: '/old', component: TodosOld},
+    {path: '/links', component: HelloWorld}
   ]
 })

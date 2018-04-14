@@ -18,7 +18,7 @@
              :checked="allDone">
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
-        <todo-item v-for="todo in todos"
+        <todo-item v-for="todo in filtered"
           :key="todo.id"
           :todo="todo" 
           @toggle="toggle($event, todo)"
@@ -34,13 +34,13 @@
       <!-- Remove this if you don't implement routing -->
       <ul class="filters">
         <li>
-          <a class="selected" href="#/">All</a>
+          <a :class="{selected: this.$route.params.filter === undefined}" href="#/">All</a>
         </li>
         <li>
-          <a href="#/active">Active</a>
+          <a :class="{selected: this.$route.params.filter === 'active'}" href="#/active">Active</a>
         </li>
         <li>
-          <a href="#/completed">Completed</a>
+          <a :class="{selected: this.$route.params.filter === 'completed'}" href="#/completed">Completed</a>
         </li>
       </ul>
       <!-- Hidden if no completed items are left ↓ -->
@@ -82,6 +82,16 @@ export default {
     },
     toggleAllLabel: function() {
       return this.allDone ? 'untick all items' : 'all done'
+    },
+    filtered: function() {
+      switch (this.$route.params.filter) {
+        case 'active':
+          return this.todos.filter(todo => !todo.done)
+        case 'completed':
+          return this.todos.filter(todo => todo.done)
+        default:
+          return this.todos
+      }
     }
   },
   methods: {
