@@ -43,7 +43,7 @@ export default {
     TodoItem,
     TodoFooter
   },
-  data: function() {
+  data() {
     return {
       newTodoText: '',
       todos: []

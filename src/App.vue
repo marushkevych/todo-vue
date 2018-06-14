@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="todo-app">
     <router-view/>
     <footer class="info">
       <p><router-link to="/">Home</router-link></p>

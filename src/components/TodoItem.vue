@@ -21,7 +21,7 @@
 export default {
   name: 'todo-item',
   props: ['todo'],
-  data: function() {
+  data() {
     return {
       editing: false
     }
